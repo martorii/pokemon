@@ -1,4 +1,4 @@
 data
 weights
-*ipynb
-vm
+*.ipynb
+*.pem
