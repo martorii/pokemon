@@ -1,0 +1,1 @@
+ssh -i pokemon-trainer_key.pem azureuser@20.56.8.113
