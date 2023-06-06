@@ -16,7 +16,7 @@ class ResidualConvBlock(nn.Module):
         # Check if input and output channels are the same for the residual connection
         self.same_channels = in_channels == out_channels
 
-        # Flag for whether or not to use residual connection
+        # Flag for whether to use residual connection
         self.is_res = is_res
 
         # First convolutional layer
@@ -173,7 +173,7 @@ class ContextUnet(nn.Module):
 
         # Initialize the up-sampling path of the U-Net with three levels
         self.up0 = nn.Sequential(
-            nn.ConvTranspose2d(2 * n_feat, 2 * n_feat, self.h//24, self.h//24), # up-sample  
+            nn.ConvTranspose2d(2 * n_feat, 2 * n_feat, self.h//4, self.h//4), # up-sample
             # nn.ConvTranspose2d(2 * n_feat, 2 * n_feat, self.h//4, self.h//4), # up-sample  
             nn.GroupNorm(8, 2 * n_feat), # normalize    8                    
             nn.ReLU(),
